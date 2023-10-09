@@ -2,7 +2,9 @@ import React from 'react';
 import './Navbar.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './Components/Navbar/Navbar';
-
+import SignUp from './Components/Sign_Up/Sign_Up'; 
+import Login from './Components/Login/Login';
+import LandingPage from './Components/Landing_Page/Landing_Page';
 
 ;
 function Navbar() {
@@ -58,6 +60,10 @@ function Navbar() {
         <BrowserRouter>
           <Navbar/>
               <Routes>
+              <Route path="landing-page" element={<LandingPage />}> 
+              <Route path="navbar" element={<Navbar />} /> 
+              <Route path="sign-up" element={<SignUp />} /> 
+              <Route path="login" element={<Login />} />
               </Routes>
             
         </BrowserRouter>
