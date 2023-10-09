@@ -1,35 +1,24 @@
-import logo from './logo.svg';
+
 import './App.css';
-import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from './Components/Navbar/Navbar';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import necessary components
 
 function App() {
-
   return (
-    <div className="App">
-        <BrowserRouter>
-          <Navbar/>
-              <Routes>  
-              </Routes>
-              <Route exact path="/" component={Home} />
-              
-            
-        </BrowserRouter>
-        <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-       
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-       
-    </div>
+    <Router>
+      <Routes>
+        {/* Define your Landing Page route */}
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HeroSection />} />
+          {/* Add other routes for the Landing Page components */}
+        </Route>
+
+        {/* Define other routes for different parts of your application */}
+        {/* For example: */}
+        <Route path="/about" element={<AboutComponent />} />
+        <Route path="/contact" element={<ContactComponent />} />
+      </Routes>
+    </Router>
   );
 }
 

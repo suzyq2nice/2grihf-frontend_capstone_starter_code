@@ -1,5 +1,10 @@
 import React from 'react';
-import './Navbar.css';
+import './Navbar.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from './Components/Navbar/Navbar';
+
+
+;
 function Navbar() {
   const handleClick = () => {
     // Implement your handleClick function here
@@ -49,6 +54,15 @@ function Navbar() {
           </a>
         </li>
       </ul>
+      <div className="App">
+        <BrowserRouter>
+          <Navbar/>
+              <Routes>
+              </Routes>
+            
+        </BrowserRouter>
+       
+    </div>
     </nav>
   );
 }
